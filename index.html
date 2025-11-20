@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Syed Ifhaan — Electrical Products, eBooks & Mini Courses</title>
+	<meta name="description" content="Shop electrical products and enroll in mini-courses & e-books by Syed Ifhaan. Instant digital delivery and reliable hardware shipping." />
+	<link rel="canonical" href="https://example.com/" />
+	<meta name="robots" content="index,follow" />
+	<meta name="keywords" content="electrical products, e-book, mini course, home wiring, Syed Ifhaan, electrical safety" />
+	<!-- Open Graph -->
+	<meta property="og:site_name" content="Syed Ifhaan" />
+	<meta property="og:title" content="Syed Ifhaan — Electrical Products & Courses" />
+	<meta property="og:description" content="Shop electrical products and enroll in mini-courses & e-books by Syed Ifhaan." />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://example.com/" />
+	<meta property="og:image" content="https://example.com/og-image.png" />
+	<!-- Twitter Card -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@syedifhaan" />
+	<meta name="twitter:title" content="Syed Ifhaan — Electrical Products & Courses" />
+	<meta name="twitter:description" content="Shop hardware and instant-access digital courses and e-books by Syed Ifhaan." />
+	<meta name="twitter:image" content="https://example.com/og-image.png" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+	<script defer src="scripts.js"></script>
+	<script src="https://kit.fontawesome.com/a2d9b3c7b1.js" crossorigin="anonymous"></script>
+	<!-- Structured data (Organization + WebSite + Product examples) -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@graph": [
+			{"@type":"Organization","name":"Syed Ifhaan","url":"https://example.com/","logo":"https://example.com/logo.png"},
+			{"@type":"WebSite","url":"https://example.com/","name":"Syed Ifhaan","potentialAction":{"@type":"SearchAction","target":"https://example.com/?s={search_term_string}","query-input":"required name=search_term_string"}}
+		]
+	}
+	</script>
+	<link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
+</head>
+<body>
+	<div class="neon-bg" aria-hidden="true">
+		<span class="blob b1"></span>
+		<span class="blob b2"></span>
+		<span class="blob b3"></span>
+		<span class="blob b4"></span>
+	</div>
+	<header class="site-header">
+		<div class="container header-inner">
+			<a class="brand" href="#">Syed Ifhaan</a>
+			<button id="mobileNavToggle" class="icon-btn mobile-nav-toggle" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu"><i class="fas fa-bars"></i></button>
+			<nav class="main-nav" aria-label="Main">
+				<a href="#products">Products</a>
+				<a href="#course">Course</a>
+				<a href="#about">About</a>
+				<a href="#contact">Contact</a>
+			</nav>
+			<nav id="mobileNav" class="mobile-nav" aria-hidden="true">
+				<a href="#products">Products</a>
+				<a href="#course">Course</a>
+				<a href="#about">About</a>
+				<a href="#contact">Contact</a>
+			</nav>
+			<div class="header-actions">
+				<input id="search" class="search" placeholder="Search products..." aria-label="Search products">
+				<button id="cartBtn" class="btn icon-btn" aria-label="Open cart">
+					<i class="fas fa-shopping-cart"></i>
+					<span id="cartCount" class="cart-count">0</span>
+				</button>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<section class="hero">
+			<div class="container hero-inner">
+				<div class="hero-copy">
+					<h1>Quality Electrical Products & Practical Courses</h1>
+					<p>Shop reliable hardware or enroll in compact, practical courses and e-books by Syed Ifhaan. Instant digital access; trusted physical delivery.</p>
+					<div class="hero-cta">
+						<a class="btn primary" href="#products">Shop Products</a>
+						<a class="btn outline" href="#course">View Course</a>
+					</div>
+				</div>
+				<div class="hero-image" aria-hidden="true">
+					<img src="https://images.unsplash.com/photo-1581093458415-3c5a04a2b7f8?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Electrical products showcase">
+				</div>
+			</div>
+		</section>
+
+		<section id="products" class="section container">
+			<h2 class="section-title">Featured Products</h2>
+			<div class="products-toolbar">
+				<div class="filters">
+					<label>Category:
+						<select id="filterType">
+							<option value="all">All</option>
+							<option value="physical">Physical</option>
+							<option value="digital">Digital</option>
+						</select>
+					</label>
+					<label>Sort:
+						<select id="sortBy">
+							<option value="default">Recommended</option>
+							<option value="price-asc">Price: Low → High</option>
+							<option value="price-desc">Price: High → Low</option>
+						</select>
+					</label>
+				</div>
+				<div class="toolbar-actions">
+					<button id="viewHistory" class="btn outline">Order History</button>
+					<button id="toggleTheme" class="btn">Toggle Theme</button>
+				</div>
+			</div>
+			<div id="productsGrid" class="products-grid" aria-live="polite"></div>
+		</section>
+
+		<!-- Product Detail Modal -->
+		<div id="productModal" class="modal" aria-hidden="true">
+			<div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="productTitle">
+				<header class="modal-header">
+					<h3 id="productTitle">Product</h3>
+					<button class="btn icon-btn" id="closeProductModal" aria-label="Close product"><i class="fas fa-times"></i></button>
+				</header>
+				<div class="modal-body product-modal-body">
+					<div class="product-media"><img id="productImg" src="" alt=""></div>
+					<div class="product-meta">
+						<p id="productDesc" class="muted"></p>
+						<div class="price" id="productPrice"></div>
+						<div class="qty-row">
+							<label>Qty</label>
+							<input id="productQty" type="number" min="1" value="1">
+						</div>
+						<div class="product-actions">
+							<button id="productAddBtn" class="btn primary">Add to cart</button>
+							<button id="productBuyBtn" class="btn outline">Buy now</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<section id="course" class="section container course-section">
+			<div class="course-card">
+				<div class="course-info">
+					<h3>Mini Course: Home Wiring Essentials</h3>
+					<p class="muted">By <strong>Syed Ifhaan</strong> — concise, practical lessons you can apply immediately.</p>
+					<ul>
+						<li>5 concise lessons (video + PDF)</li>
+						<li>Safety-first approach</li>
+						<li>Includes an e-book and downloadable resources</li>
+					</ul>
+					<div class="course-cta">
+						<button class="btn primary" data-product-id="course-1">Buy Course — ₹599</button>
+						<button class="btn outline" onclick="scrollTo('#contact')">Ask a question</button>
+					</div>
+				</div>
+				<div class="course-image">
+					<img src="https://images.unsplash.com/photo-1581093588401-7b4b4f5c2b55?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Course cover">
+				</div>
+			</div>
+		</section>
+
+		<section id="about" class="section container">
+			<h2 class="section-title">About Syed Ifhaan</h2>
+			<p>Syed is a practical electrical trainer and product curator focused on safety and real-world solutions. His products are tested, and his digital content is designed for fast skill gains.</p>
+		</section>
+
+		<section id="contact" class="section container contact-section">
+			<h2 class="section-title">Contact & Newsletter</h2>
+			<div class="contact-grid">
+				<form id="contactForm" class="contact-form">
+					<label for="name">Name</label>
+					<input id="name" required>
+					<label for="email">Email</label>
+					<input id="email" type="email" required>
+					<label for="message">Message</label>
+					<textarea id="message" rows="4"></textarea>
+					<button class="btn primary" type="submit">Send Message</button>
+				</form>
+				<div class="newsletter">
+					<p>Subscribe for offers and course updates.</p>
+					<div class="subscribe">
+						<input id="subscribeEmail" placeholder="you@example.com">
+						<button id="subscribeBtn" class="btn">Subscribe</button>
+					</div>
+					<address class="muted">Email: <a href="mailto:hello@syedifhaan.example">hello@syedifhaan.example</a></address>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="container footer-inner">
+			<div>© <span id="year"></span> Syed Ifhaan</div>
+			<div class="socials">
+				<a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+				<a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Cart / Checkout Modal -->
+	<div id="cartModal" class="modal" aria-hidden="true">
+		<div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="cartTitle">
+			<header class="modal-header">
+				<h3 id="cartTitle">Your Cart</h3>
+				<button class="btn icon-btn" id="closeCart" aria-label="Close cart"><i class="fas fa-times"></i></button>
+			</header>
+			<div class="modal-body">
+				<div id="cartItems"></div>
+				<div class="cart-summary">
+					<div>Total: <strong id="cartTotal">₹0</strong></div>
+					<button id="checkoutBtn" class="btn primary">Checkout</button>
+				</div>
+
+				<!-- Order History Modal -->
+				<div id="historyModal" class="modal" aria-hidden="true">
+					<div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="historyTitle">
+						<header class="modal-header">
+							<h3 id="historyTitle">Order History</h3>
+							<button class="btn icon-btn" id="closeHistory" aria-label="Close history"><i class="fas fa-times"></i></button>
+						</header>
+						<div class="modal-body" id="historyBody">
+							<p class="muted">No orders yet.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer class="modal-footer muted">Payments simulated — no real transactions.</footer>
+		</div>
+	</div>
+
+</body>
+</html>
